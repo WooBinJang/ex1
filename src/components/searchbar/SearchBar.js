@@ -12,13 +12,13 @@ const SearchBar = (props) => {
   const inputClick = () => {
     serachFnc();
   };
-  // 클릭시
+  // 클릭시 함수 실행
   const inputEnter = (e) => {
     if (e.key === "Enter") {
       serachFnc();
     }
   };
-  // 엔터키 입력시
+  // 엔터키 입력시  함수 실행
   return (
     <div className="searchArea">
       <div className="logoarea">
