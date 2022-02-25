@@ -8,16 +8,17 @@ const SearchBar = (props) => {
     const value = inputRef.current.value;
     props.searchResult(value);
   };
-
+  //공통함수
   const inputClick = () => {
     serachFnc();
   };
-
+  // 클릭시
   const inputEnter = (e) => {
     if (e.key === "Enter") {
       serachFnc();
     }
   };
+  // 엔터키 입력시
   return (
     <div className="searchArea">
       <div className="logoarea">
