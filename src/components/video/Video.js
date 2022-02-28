@@ -1,13 +1,20 @@
 import React from "react";
 import "./Video.css";
 const Video = (props) => {
+  const container = "container";
+  const displayClass = props.display === "rowlist" ? "list-h" : "list-v";
   return (
-    <li className="videoContainer">
-      <div className="video">
+    <li className={`${container} ${displayClass}`}>
+      <div
+        className="video"
+        onClick={() => {
+          props.onVideoClick(props.videoItem);
+        }}
+      >
         <img
-          className="thuming"
+          className="thumbanail"
           src={props.videoItem.snippet.thumbnails.medium.url}
-          alt="video thumnail"
+          alt="video thumbanail"
         />
         <div className="titledate">
           <p className="title"></p>

@@ -1,0 +1,24 @@
+.viewbox {
+  width: 100%;
+}
+
+.viewbox .videoframe {
+  width: 100%;
+  height: 550px;
+  border: none;
+}
+
+.txtcontainer > h2 {
+  font-size: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.txtcontainer > h3 {
+  font-size: 22px;
+
+  margin-bottom: 20px;
+}
+.txtcontainer > p {
+  font-size: 14px;
+  line-height: 1.5;
+}

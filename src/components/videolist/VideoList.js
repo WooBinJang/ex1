@@ -6,7 +6,12 @@ const VideoList = (props) => {
   return (
     <ul className="videolist">
       {props.videoItems.map((videoItem) => (
-        <Video videoItem={videoItem} key={videoItem.etag} />
+        <Video
+          videoItem={videoItem}
+          key={videoItem.etag}
+          onVideoClick={props.onVideoClick}
+          display={props.display}
+        />
       ))}
     </ul>
   );

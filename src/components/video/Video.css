@@ -1,10 +1,21 @@
-.videoContainer {
+.container {
   width: 20%;
-  padding: 4px;
+  padding: 0.2em;
 }
-
+.container.list-v .video {
+  flex: 1 1 20%;
+}
+.container.list-h {
+  flex: 1 1 100%;
+}
+.container.list-h .thumbanail {
+  width: 30%;
+}
 .video {
+  display: flex;
+  height: 100%;
   width: 100%;
+  flex-direction: row;
   border: 1px solid #c0c0c0;
   cursor: pointer;
   transition: all 0.2s ease-in;
@@ -13,7 +24,7 @@
   transform: scale(1.01);
   box-shadow: 3px 3px 5px 0px rgba(191, 191, 191, 0.53);
 }
-.thuming {
+.thumbanail {
   width: 100%;
 }
 .titledate {
