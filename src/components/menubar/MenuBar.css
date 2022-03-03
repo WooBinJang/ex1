@@ -1,0 +1,25 @@
+.menubar-area {
+  position: fixed;
+  left: 0;
+  top: 64px;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+  height: 100vh;
+}
+
+.menu-btn {
+  background-color: transparent;
+  color: #a5a5a5;
+  padding: 18px;
+}
+.menu-btn i {
+  display: block;
+  margin: auto;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.menu-btn:hover {
+  background-color: #c0c0c0;
+}

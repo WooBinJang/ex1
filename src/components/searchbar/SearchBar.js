@@ -1,12 +1,12 @@
 import React, { useRef } from "react";
 import "./SearchBar.css";
 
-const SearchBar = (props) => {
+const SearchBar = ({ searchResult }) => {
   const inputRef = useRef();
 
   const serachFnc = () => {
     const value = inputRef.current.value;
-    props.searchResult(value);
+    searchResult(value);
   };
   //공통함수
   const inputClick = () => {
@@ -22,6 +22,9 @@ const SearchBar = (props) => {
   return (
     <div className="searchArea">
       <div className="logoarea">
+        <button className="btn-leftmenu">
+          <i className="fa-solid fa-bars"></i>
+        </button>
         <h1>
           <img className="logoImg" src="/images/logo.png" alt="youtube" />
         </h1>
@@ -37,10 +40,19 @@ const SearchBar = (props) => {
         <button className="searchBtn" onClick={inputClick}>
           <img src="/images/searchicon.png" alt="search" />
         </button>
+        <button className="micbtn">
+          <i className="fa-solid fa-microphone"></i>
+        </button>
       </div>
       <div className="topMenuArea">
-        <button className="gridMenuBtn">
-          <img src="/images/gridmenuicon.png" alt="topmenu button" />
+        <button className="btn-rightmenu">
+          <i className="fa-solid fa-table-cells"></i>
+        </button>
+        <button className="btn-rightmenu">
+          <i className="fa-solid fa-ellipsis-vertical"></i>
+        </button>
+        <button className="btn-rightmenu">
+          <i className="fa-solid fa-user"></i>
         </button>
       </div>
     </div>

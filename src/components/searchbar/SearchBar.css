@@ -19,15 +19,16 @@
   width: 500px;
   height: 40px;
   padding-left: 10px;
-  margin-right: 4px;
   border: 1px solid #dfdfdf;
   font-size: 14px;
-  outline: 0;
+  outline: none;
 }
 .searchBtn {
   background-color: #f3f3f3;
-  border: 1px solid #dfdfdf;
-  padding: 10px;
+  border-bottom: 1px solid #dfdfdf;
+  border-top: 1px solid #dfdfdf;
+  border-right: 1px solid #dfdfdf;
+  width: 60px;
   height: 40px;
 }
 .searchBtn img {
@@ -41,4 +42,41 @@ button {
   background: none;
   outline: none;
   border: none;
+}
+
+.micbtn {
+  padding: 10px;
+  margin-right: 4px;
+}
+
+.micbtn i {
+  color: #a7a5a5;
+  font-size: 20px;
+}
+
+.topMenuArea {
+  display: flex;
+}
+
+.topMenuArea .btn-rightmenu {
+  padding: 10px;
+  margin-left: 8px;
+}
+
+.topMenuArea .btn-rightmenu i {
+  color: #a7a5a5;
+  font-size: 20px;
+}
+.logoarea {
+  display: flex;
+  align-items: center;
+}
+.logoarea .btn-leftmenu {
+  padding: 10px;
+  margin-right: 20px;
+}
+
+.logoarea .btn-leftmenu i {
+  color: #a7a5a5;
+  font-size: 20px;
 }

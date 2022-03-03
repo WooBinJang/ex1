@@ -1,7 +1,7 @@
 import React from "react";
 import "./VideoView.css";
 
-const VideoView = (props) => {
+const VideoView = ({ video }) => {
   return (
     <div className="viewbox">
       <div className="playVideoBox">
@@ -9,13 +9,13 @@ const VideoView = (props) => {
           title="비디오플레이어"
           type="text/html"
           className="videoframe"
-          src={`http://www.youtube.com/embed/${props.video.id}`}
+          src={`http://www.youtube.com/embed/${video.id}`}
         ></iframe>
       </div>
       <div className="txtcontainer">
-        <h2>{props.video.snippet.title}</h2>
-        <h3>{props.video.snippet.channelTitle}</h3>
-        <p>{props.video.snippet.description}</p>
+        <h2>{video.snippet.title}</h2>
+        <h3>{video.snippet.channelTitle}</h3>
+        <p>{video.snippet.description}</p>
       </div>
     </div>
   );

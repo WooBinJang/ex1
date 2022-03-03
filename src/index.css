@@ -49,3 +49,8 @@ body {
 .blind {
   display: none;
 }
+
+button {
+  cursor: pointer;
+  border: none;
+}
