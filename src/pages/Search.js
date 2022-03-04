@@ -2,7 +2,6 @@ import React from "react";
 import "../App.css";
 import MenuBar from "../components/menubar/MenuBar";
 import VideoList from "../components/videolist/VideoList";
-import VideoView from "../components/videoview/VideoView";
 
 const Search = ({ selectView, videoItems, onVideoClick }) => {
   return (
@@ -11,16 +10,11 @@ const Search = ({ selectView, videoItems, onVideoClick }) => {
         <MenuBar />
       </div>
       <div className="content">
-        {selectView && (
-          <div className="view">
-            <VideoView video={selectView} />
-          </div>
-        )}
         <div className="list">
           <VideoList
             videoItems={videoItems}
             onVideoClick={onVideoClick}
-            display={selectView ? "rowlist" : "collist"}
+            display="rowlist"
           />
         </div>
       </div>

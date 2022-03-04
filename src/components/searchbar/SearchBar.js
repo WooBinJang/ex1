@@ -1,12 +1,14 @@
 import React, { useRef } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./SearchBar.css";
 
 const SearchBar = ({ searchResult }) => {
   const inputRef = useRef();
-
+  const navigate = useNavigate();
   const serachFnc = () => {
     const value = inputRef.current.value;
     searchResult(value);
+    navigate(`/search?seach_query=${value}`);
   };
   //공통함수
   const inputClick = () => {
@@ -25,10 +27,13 @@ const SearchBar = ({ searchResult }) => {
         <button className="btn-leftmenu">
           <i className="fa-solid fa-bars"></i>
         </button>
-        <h1>
-          <img className="logoImg" src="/images/logo.png" alt="youtube" />
-        </h1>
+        <Link to="/">
+          <h1>
+            <img className="logoImg" src="/images/logo.png" alt="youtube" />
+          </h1>
+        </Link>
       </div>
+
       <div className="searchInputArea">
         <input
           className="searchInput"
