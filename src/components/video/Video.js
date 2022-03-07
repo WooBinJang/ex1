@@ -19,7 +19,7 @@ const Video = ({ onVideoClick, display, videoItem }) => {
             alt="video thumbanail"
           />
           <div className="titledate">
-            <p className="title"></p>
+            <p className="title">{videoItem.snippet.title}</p>
             <p className="channelTitle">{videoItem.snippet.channelTitle}</p>
           </div>
         </div>

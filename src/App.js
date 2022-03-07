@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
-import SearchBar from "./components/searchbar/SearchBar";
 import "./App.css";
+import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Search from "./pages/Search";
 import Watch from "./pages/Watch";
+import SearchBar from "./components/searchbar/SearchBar";
+
+let defaultVideos = JSON.parse(sessionStorage.getItem("defaultVideos")) || null;
 
 function App({ youtube }) {
   const [videoItems, setVideoItems] = useState([]);
@@ -14,6 +16,21 @@ function App({ youtube }) {
     setSelectView(video); // 비디오가 받아 지면  selectView 업데이트
   };
 
+  useEffect(() => {
+    youtube.mostPopular().then((videos) => {
+      setVideoItems(videos);
+      defaultVideos = videos;
+    });
+  }, []);
+
+  const clickLogo = () => {
+    setVideoItems(defaultVideos);
+  };
+
+  useEffect(() => {
+    sessionStorage.setItem("defaultVideos", JSON.stringify(defaultVideos));
+  }, [videoItems, selectView]);
+
   const search = (searchValueTxt) => {
     setSelectView(null);
     youtube
@@ -21,12 +38,9 @@ function App({ youtube }) {
       .then((videos) => setVideoItems(videos));
   };
 
-  useEffect(() => {
-    youtube.mostPopular().then((video) => setVideoItems(video));
-  }, []);
   return (
     <div className="App">
-      <SearchBar searchResult={search} />
+      <SearchBar searchResult={search} clickLogo={clickLogo} />
       <Routes>
         <Route
           path="/"

@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./SearchBar.css";
 
-const SearchBar = ({ searchResult }) => {
+const SearchBar = ({ searchResult, clickLogo }) => {
   const inputRef = useRef();
   const navigate = useNavigate();
   const serachFnc = () => {
@@ -29,7 +29,12 @@ const SearchBar = ({ searchResult }) => {
         </button>
         <Link to="/">
           <h1>
-            <img className="logoImg" src="/images/logo.png" alt="youtube" />
+            <img
+              className="logoImg"
+              src="/images/logo.png"
+              alt="youtube"
+              onClick={clickLogo}
+            />
           </h1>
         </Link>
       </div>
