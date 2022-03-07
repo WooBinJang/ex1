@@ -7,6 +7,7 @@ import Watch from "./pages/Watch";
 import SearchBar from "./components/searchbar/SearchBar";
 
 let defaultVideos = JSON.parse(sessionStorage.getItem("defaultVideos")) || null;
+let selectedWatch = JSON.parse(sessionStorage.getItem("selectedWatch")) || null;
 
 function App({ youtube }) {
   const [videoItems, setVideoItems] = useState([]);
@@ -14,6 +15,7 @@ function App({ youtube }) {
 
   const selectVideo = (video) => {
     setSelectView(video); // 비디오가 받아 지면  selectView 업데이트
+    selectedWatch = video;
   };
 
   useEffect(() => {
@@ -29,6 +31,7 @@ function App({ youtube }) {
 
   useEffect(() => {
     sessionStorage.setItem("defaultVideos", JSON.stringify(defaultVideos));
+    sessionStorage.setItem("selectedWatch", JSON.stringify(selectedWatch));
   }, [videoItems, selectView]);
 
   const search = (searchValueTxt) => {
@@ -66,6 +69,7 @@ function App({ youtube }) {
           path="/watch"
           element={
             <Watch
+              selectedWatch={selectedWatch}
               selectView={selectView}
               videoItems={videoItems}
               onVideoClick={selectVideo}

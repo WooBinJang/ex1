@@ -27,10 +27,6 @@
 .thumbanail {
   width: 100%;
 }
-.titledate {
-  text-align: left;
-  padding: 16px;
-}
 
 .title {
   font-size: 14px;
@@ -38,4 +34,65 @@
 
 .channelTitle {
   font-size: 11px;
+  margin-bottom: 3px;
+}
+
+.metadata {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 16px;
+  margin-top: 16px;
+  margin-bottom: 10px;
+}
+
+.channekImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.titledate {
+  text-align: left;
+}
+.title {
+  margin-bottom: 3px;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-all; /*  영문 */
+}
+.channelTitle {
+  margin-bottom: 3px;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-all; /*  영문 */
+}
+.commentCount {
+  font-size: 11px;
+  margin-right: 10px;
+  position: relative;
+}
+.commentCount::after {
+  content: "·";
+  font-size: 20px;
+  position: absolute;
+  right: -8px;
+
+  top: -50%;
+}
+.publishedAt {
+  font-size: 11px;
+}
+
+.metadata-bottom {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 16px;
+  align-items: center;
+  margin-bottom: 10px;
 }

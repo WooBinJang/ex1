@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { numberComma, publishDate } from "../../common/common";
 import "./Video.css";
 const Video = ({ onVideoClick, display, videoItem }) => {
   const container = "container";
@@ -18,9 +19,30 @@ const Video = ({ onVideoClick, display, videoItem }) => {
             src={videoItem.snippet.thumbnails.medium.url}
             alt="video thumbanail"
           />
-          <div className="titledate">
-            <p className="title">{videoItem.snippet.title}</p>
-            <p className="channelTitle">{videoItem.snippet.channelTitle}</p>
+          <div className="metadata">
+            <div className="channelImg">
+              <img
+                src={videoItem.snippet.thumbnails.default.url}
+                alt=" thumbanail"
+                className="channekImg"
+              />
+            </div>
+
+            <div className="titledate">
+              <p className="title">{videoItem.snippet.title}</p>
+              <p className="channelTitle">{videoItem.snippet.channelTitle}</p>
+            </div>
+          </div>
+          <div className="metadata-bottom">
+            {display === "collist" ? (
+              <p className="commentCount">
+                댓글 {numberComma(videoItem.statistics.commentCount)}개
+              </p>
+            ) : null}
+
+            <p className="publishedAt">
+              {publishDate(videoItem.snippet.publishedAt)}
+            </p>
           </div>
         </div>
       </Link>

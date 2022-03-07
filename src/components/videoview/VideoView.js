@@ -15,7 +15,7 @@ const VideoView = ({ video }) => {
       <div className="txtcontainer">
         <h2>{video.snippet.title}</h2>
         <h3>{video.snippet.channelTitle}</h3>
-        <p>{video.snippet.description}</p>
+        <p className="videoview-des">{video.snippet.description}</p>
       </div>
     </div>
   );

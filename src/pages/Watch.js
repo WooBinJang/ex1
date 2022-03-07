@@ -3,11 +3,11 @@ import "../App.css";
 import VideoList from "../components/videolist/VideoList";
 import VideoView from "../components/videoview/VideoView";
 
-const Watch = ({ selectView, videoItems, onVideoClick }) => {
+const Watch = ({ selectedWatch, selectView, videoItems, onVideoClick }) => {
   return (
     <div className="content">
       <div className="view">
-        <VideoView video={selectView} />
+        <VideoView video={selectedWatch} />
       </div>
       <div className="list">
         <VideoList
