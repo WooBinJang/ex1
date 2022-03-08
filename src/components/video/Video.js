@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { numberComma, publishDate } from "../../common/common";
 import "./Video.css";
-const Video = ({ onVideoClick, display, videoItem }) => {
+const Video = ({ onVideoClick, display, videoItem, search }) => {
   const container = "container";
   const displayClass = display === "rowlist" ? "list-h" : "list-v";
   return (
-    <li className={`${container} ${displayClass}`}>
+    <li className={`${container} ${displayClass} ${search ? "search" : ""}`}>
       <Link to="/watch">
         <div
           className="video"
@@ -34,11 +34,11 @@ const Video = ({ onVideoClick, display, videoItem }) => {
             </div>
           </div>
           <div className="metadata-bottom">
-            {display === "collist" ? (
+            {!search && (
               <p className="commentCount">
                 댓글 {numberComma(videoItem.statistics.commentCount)}개
               </p>
-            ) : null}
+            )}
 
             <p className="publishedAt">
               {publishDate(videoItem.snippet.publishedAt)}

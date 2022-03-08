@@ -43,7 +43,6 @@
   align-items: center;
   padding: 0 16px;
   margin-top: 16px;
-  margin-bottom: 10px;
 }
 
 .channekImg {
@@ -92,7 +91,13 @@
 .metadata-bottom {
   display: flex;
   justify-content: flex-start;
-  margin-left: 16px;
+  margin-left: 66px;
   align-items: center;
   margin-bottom: 10px;
+}
+
+.search > a {
+  width: 75%;
+  margin: auto;
+  display: block;
 }
